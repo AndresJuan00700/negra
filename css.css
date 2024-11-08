@@ -233,3 +233,63 @@ body {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    /* Ajustar el tamaño del texto principal para móviles */
+    .animated-text {
+        font-size: 2rem;
+    }
+
+    .subtext {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustar el tamaño de los corazones laterales */
+    .side-heart {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Ajustar corazones flotantes para móviles */
+    .heart {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Ajustar el texto adicional */
+    .extra-text {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .animated-text {
+        font-size: 1.5rem;
+    }
+
+    .subtext {
+        font-size: 1rem;
+    }
+
+    .border-decor {
+        padding: 1rem;
+        border-width: 2px;
+    }
+
+    .extra-text {
+        font-size: 1rem;
+    }
+    
+    /* Redimensionar las flores */
+    .flower {
+        width: 30px;
+        height: 30px;
+    }
+}
