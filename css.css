@@ -1,50 +1,261 @@
-/* Estilo general */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+/* Reset de estilos básicos */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-}
-
-/* Encabezado */
-header {
-    background-color: #333;
+    font-family: 'Courier New', cursive, sans-serif;
     color: #fff;
-    padding: 1rem;
-    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+}
+
+/* Animación de fondo */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal */
+.container {
     text-align: center;
+    animation: fadeIn 3s ease-in-out forwards;
+    z-index: 1;
+    position: relative;
+    padding: 20px;
 }
 
-h1 {
-    margin: 0;
+/* Efecto de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Contenido principal */
-main {
-    background-color: #fff;
+/* Borde decorativo alrededor del texto */
+.border-decor {
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    border: 3px dashed #FF69B4;
+    border-radius: 15px;
+    position: relative;
+    animation: glow 2s ease-in-out infinite alternate;
+    display: inline-block;
 }
 
-/* Botón */
-button {
-    background-color: #333;
+/* Efecto de brillo */
+@keyframes glow {
+    from { box-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4; }
+    to { box-shadow: 0 0 20px #FF69B4, 0 0 30px #FF69B4; }
+}
+
+/* Texto principal */
+.animated-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FF69B4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: heartbeat 2s ease-in-out infinite;
+    margin-bottom: 1rem;
+}
+
+/* Animación de "latido" */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Subtexto */
+.animated-subtext {
+    font-size: 2rem;
     color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
+    opacity: 0.8;
+    animation: pulse 3s ease-in-out infinite;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-    background-color: #555;
+/* Animación de pulso suave */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Corazones decorativos a los lados */
+.side-decor {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    pointer-events: none;
+}
+
+.side-heart {
+    width: 40px;
+    height: 40px;
+    opacity: 0.9;
+}
+
+.left-heart {
+    animation: floatLeft 3s infinite ease-in-out;
+}
+
+.right-heart {
+    animation: floatRight 3s infinite ease-in-out;
+}
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.1); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(10px) scale(1.1); }
+}
+
+/* Corazones flotantes con imagen */
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.heart:nth-child(1) { left: 5%; width: 20px; height: 20px; animation-delay: 0s; }
+.heart:nth-child(2) { left: 10%; width: 30px; height: 30px; animation-delay: 1s; }
+.heart:nth-child(3) { left: 15%; width: 25px; height: 25px; animation-delay: 2s; }
+.heart:nth-child(4) { left: 20%; width: 35px; height: 35px; animation-delay: 3s; }
+.heart:nth-child(5) { left: 25%; width: 28px; height: 28px; animation-delay: 4s; }
+.heart:nth-child(6) { left: 30%; width: 22px; height: 22px; animation-delay: 5s; }
+.heart:nth-child(7) { left: 35%; width: 40px; height: 40px; animation-delay: 6s; }
+.heart:nth-child(8) { left: 40%; width: 26px; height: 26px; animation-delay: 7s; }
+.heart:nth-child(9) { left: 45%; width: 32px; height: 32px; animation-delay: 8s; }
+.heart:nth-child(10) { left: 50%; width: 24px; height: 24px; animation-delay: 9s; }
+.heart:nth-child(11) { left: 55%; width: 36px; height: 36px; animation-delay: 10s; }
+.heart:nth-child(12) { left: 60%; width: 27px; height: 27px; animation-delay: 11s; }
+.heart:nth-child(13) { left: 65%; width: 34px; height: 34px; animation-delay: 12s; }
+.heart:nth-child(14) { left: 70%; width: 23px; height: 23px; animation-delay: 13s; }
+.heart:nth-child(15) { left: 75%; width: 30px; height: 30px; animation-delay: 14s; }
+.heart:nth-child(16) { left: 80%; width: 29px; height: 29px; animation-delay: 15s; }
+.heart:nth-child(17) { left: 85%; width: 21px; height: 21px; animation-delay: 16s; }
+.heart:nth-child(18) { left: 90%; width: 33px; height: 33px; animation-delay: 17s; }
+.heart:nth-child(19) { left: 95%; width: 25px; height: 25px; animation-delay: 18s; }
+.heart:nth-child(20) { left: 100%; width: 20px; height: 20px; animation-delay: 19s; }
+.heart:nth-child(1) { left: 5%; width: 20px; height: 20px; animation-delay: 0s; }
+.heart:nth-child(2) { left: 10%; width: 30px; height: 30px; animation-delay: 1s; }
+.heart:nth-child(3) { left: 15%; width: 25px; height: 25px; animation-delay: 2s; }
+.heart:nth-child(4) { left: 20%; width: 35px; height: 35px; animation-delay: 3s; }
+.heart:nth-child(5) { left: 25%; width: 28px; height: 28px; animation-delay: 4s; }
+.heart:nth-child(6) { left: 30%; width: 22px; height: 22px; animation-delay: 5s; }
+.heart:nth-child(7) { left: 35%; width: 40px; height: 40px; animation-delay: 6s; }
+.heart:nth-child(8) { left: 40%; width: 26px; height: 26px; animation-delay: 7s; }
+.heart:nth-child(9) { left: 45%; width: 32px; height: 32px; animation-delay: 8s; }
+.heart:nth-child(10) { left: 50%; width: 24px; height: 24px; animation-delay: 9s; }
+.heart:nth-child(11) { left: 55%; width: 36px; height: 36px; animation-delay: 10s; }
+.heart:nth-child(12) { left: 60%; width: 27px; height: 27px; animation-delay: 11s; }
+.heart:nth-child(13) { left: 65%; width: 34px; height: 34px; animation-delay: 12s; }
+.heart:nth-child(14) { left: 70%; width: 23px; height: 23px; animation-delay: 13s; }
+.heart:nth-child(15) { left: 75%; width: 30px; height: 30px; animation-delay: 14s; }
+.heart:nth-child(16) { left: 80%; width: 29px; height: 29px; animation-delay: 15s; }
+.heart:nth-child(17) { left: 85%; width: 21px; height: 21px; animation-delay: 16s; }
+.heart:nth-child(18) { left: 90%; width: 33px; height: 33px; animation-delay: 17s; }
+.heart:nth-child(19) { left: 95%; width: 25px; height: 25px; animation-delay: 18s; }
+.heart:nth-child(20) { left: 100%; width: 20px; height: 20px; animation-delay: 19s; }
+
+
+/* Animación de corazones flotantes */
+@keyframes float {
+    0% { bottom: -10%; transform: translateX(-10px) scale(0.8); opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 110%; transform: translateX(10px) scale(1.2); opacity: 0; }
+}
+
+/* Flores decorativas utilizando la imagen flor.png */
+.flowers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.flower {
+    position: absolute;
+    width: 50px; /* Tamaño de la imagen de la flor */
+    height: 50px;
+    background-image: url('flor.png'); /* Ruta de la imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Posiciones de las flores a lo largo de todo el borde */
+.flower:nth-child(1) { top: 2%; left: 2%; }
+.flower:nth-child(2) { top: 2%; left: 20%; }
+.flower:nth-child(3) { top: 2%; left: 40%; }
+.flower:nth-child(4) { top: 2%; left: 60%; }
+.flower:nth-child(5) { top: 2%; left: 80%; }
+.flower:nth-child(6) { top: 2%; right: 2%; }
+
+.flower:nth-child(7) { bottom: 2%; left: 2%; }
+.flower:nth-child(8) { bottom: 2%; left: 20%; }
+.flower:nth-child(9) { bottom: 2%; left: 40%; }
+.flower:nth-child(10) { bottom: 2%; left: 60%; }
+.flower:nth-child(11) { bottom: 2%; left: 80%; }
+.flower:nth-child(12) { bottom: 2%; right: 2%; }
+
+.flower:nth-child(13) { top: 20%; left: 2%; }
+.flower:nth-child(14) { top: 40%; left: 2%; }
+.flower:nth-child(15) { top: 60%; left: 2%; }
+.flower:nth-child(16) { top: 80%; left: 2%; }
+
+.flower:nth-child(17) { top: 20%; right: 2%; }
+.flower:nth-child(18) { top: 40%; right: 2%; }
+.flower:nth-child(19) { top: 60%; right: 2%; }
+.flower:nth-child(20) { top: 80%; right: 2%; }
+
+/* Animación de flor */
+@keyframes bloom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+.flower {
+    animation: bloom 3s infinite alternate ease-in-out;
+}
+/* Estilo para el texto adicional */
+.extra-text {
+    font-size: 1.5rem;
+    color: #FF69B4;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 3s ease-in-out forwards;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
