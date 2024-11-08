@@ -204,7 +204,7 @@ body {
     position: absolute;
     width: 50px; /* Tamaño de la imagen de la flor */
     height: 50px;
-    background-image: url('flor.png'); /* Ruta de la imagen */
+    background-image: url('imagenes/flor.png'); /* Ruta de la imagen */
     background-size: cover;
     background-repeat: no-repeat;
 }
