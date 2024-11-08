@@ -4,73 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensaje de Amor</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="estilosindex.css">
 </head>
 <body>
-    <div class="container">
-        <div class="border-decor">
-            <h1 class="animated-text">Negra, te amo mucho 💖</h1>
-            <h2 class="subtext">Nunca te voy a dejar de amar asi pase lo que sea
-                                   <br> y te prometo que siempre vamos a estar juntos hasta
-                                   <br> donde Dios nos lo permita. Siempre seremos solo tú
-                                   <br> y yo, y eso no lo va a cambiar nada ni nadie. espero
-                                   <br> me estes extrañando como yo te estoy extrañando a ti
-                                   <br> espero verte pronto.💖
-            </h2>
-        </div>
-        <div class="side-decor">
-            <img src="imagenes/corazon.png" alt="corazón" class="side-heart left-heart">
-            <img src="imagenes/corazon.png" alt="corazón" class="side-heart right-heart">
-        </div>
-        
-        <!-- Texto adicional -->
-        <p class="extra-text">Ventajas de tener un novio programador jaja</p>
+    <!-- Contenedor inicial con el mensaje y el ícono de carta -->
+    <div id="initialMessage" class="initial-message">
+        <p>¡Haz clic aquí!</p>
+        <img src="imagenes/carta.png" alt="Ícono de carta" class="carta-icono" onclick="abrirCarta()">
     </div>
-    
-    <div class="hearts">
-        <!-- Más corazones flotantes -->
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-        <img src="imagenes/corazon.png" class="heart" alt="Corazón">
-    </div>
-    
-    <div class="flowers">
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-    </div>
+
+    <script>
+        // Función para redirigir a carta.html con una pequeña demora para que la animación pueda ejecutarse
+        function abrirCarta() {
+            const cartaIcono = document.querySelector('.carta-icono');
+            cartaIcono.classList.add('clic-animacion'); // Agregar animación de clic
+
+            // Espera la duración de la animación antes de redirigir a carta.html
+            setTimeout(() => {
+                window.location.href = 'carta.html';
+            }, 500); // 500 ms de espera para permitir que se ejecute la animación
+        }
+    </script>
 </body>
 </html>
