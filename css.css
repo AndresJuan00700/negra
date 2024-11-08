@@ -72,19 +72,12 @@ body {
     50% { transform: scale(1.1); }
 }
 
-/* Subtexto */
-.animated-subtext {
+/* Subtexto sin animación */
+.subtext {
     font-size: 2rem;
     color: #fff;
     opacity: 0.8;
-    animation: pulse 3s ease-in-out infinite;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Animación de pulso suave */
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.05); opacity: 1; }
 }
 
 /* Corazones decorativos a los lados */
@@ -142,6 +135,7 @@ body {
     opacity: 0.8;
 }
 
+/* Posiciones y animación de corazones flotantes */
 .heart:nth-child(1) { left: 5%; width: 20px; height: 20px; animation-delay: 0s; }
 .heart:nth-child(2) { left: 10%; width: 30px; height: 30px; animation-delay: 1s; }
 .heart:nth-child(3) { left: 15%; width: 25px; height: 25px; animation-delay: 2s; }
@@ -162,27 +156,6 @@ body {
 .heart:nth-child(18) { left: 90%; width: 33px; height: 33px; animation-delay: 17s; }
 .heart:nth-child(19) { left: 95%; width: 25px; height: 25px; animation-delay: 18s; }
 .heart:nth-child(20) { left: 100%; width: 20px; height: 20px; animation-delay: 19s; }
-.heart:nth-child(1) { left: 5%; width: 20px; height: 20px; animation-delay: 0s; }
-.heart:nth-child(2) { left: 10%; width: 30px; height: 30px; animation-delay: 1s; }
-.heart:nth-child(3) { left: 15%; width: 25px; height: 25px; animation-delay: 2s; }
-.heart:nth-child(4) { left: 20%; width: 35px; height: 35px; animation-delay: 3s; }
-.heart:nth-child(5) { left: 25%; width: 28px; height: 28px; animation-delay: 4s; }
-.heart:nth-child(6) { left: 30%; width: 22px; height: 22px; animation-delay: 5s; }
-.heart:nth-child(7) { left: 35%; width: 40px; height: 40px; animation-delay: 6s; }
-.heart:nth-child(8) { left: 40%; width: 26px; height: 26px; animation-delay: 7s; }
-.heart:nth-child(9) { left: 45%; width: 32px; height: 32px; animation-delay: 8s; }
-.heart:nth-child(10) { left: 50%; width: 24px; height: 24px; animation-delay: 9s; }
-.heart:nth-child(11) { left: 55%; width: 36px; height: 36px; animation-delay: 10s; }
-.heart:nth-child(12) { left: 60%; width: 27px; height: 27px; animation-delay: 11s; }
-.heart:nth-child(13) { left: 65%; width: 34px; height: 34px; animation-delay: 12s; }
-.heart:nth-child(14) { left: 70%; width: 23px; height: 23px; animation-delay: 13s; }
-.heart:nth-child(15) { left: 75%; width: 30px; height: 30px; animation-delay: 14s; }
-.heart:nth-child(16) { left: 80%; width: 29px; height: 29px; animation-delay: 15s; }
-.heart:nth-child(17) { left: 85%; width: 21px; height: 21px; animation-delay: 16s; }
-.heart:nth-child(18) { left: 90%; width: 33px; height: 33px; animation-delay: 17s; }
-.heart:nth-child(19) { left: 95%; width: 25px; height: 25px; animation-delay: 18s; }
-.heart:nth-child(20) { left: 100%; width: 20px; height: 20px; animation-delay: 19s; }
-
 
 /* Animación de corazones flotantes */
 @keyframes float {
@@ -191,7 +164,7 @@ body {
     100% { bottom: 110%; transform: translateX(10px) scale(1.2); opacity: 0; }
 }
 
-/* Flores decorativas utilizando la imagen flor.png */
+/* Flores decorativas utilizando la imagen en la carpeta imagenes */
 .flowers {
     position: absolute;
     width: 100%;
@@ -202,9 +175,9 @@ body {
 
 .flower {
     position: absolute;
-    width: 50px; /* Tamaño de la imagen de la flor */
+    width: 50px;
     height: 50px;
-    background-image: url('imagenes/flor.png'); /* Ruta de la imagen */
+    background-image: url('imagenes/flor.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -243,7 +216,8 @@ body {
 .flower {
     animation: bloom 3s infinite alternate ease-in-out;
 }
-/* Estilo para el texto adicional */
+
+/* Estilo y animación para el texto adicional */
 .extra-text {
     font-size: 1.5rem;
     color: #FF69B4;
